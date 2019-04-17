@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export interface FormStateFullProps {
-  title?: string;
+  readonly title?: string;
 }
 
 export interface FormStateFullState {

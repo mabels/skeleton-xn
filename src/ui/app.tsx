@@ -5,23 +5,23 @@ import { FormStateFull } from './form-state-full';
 import { FormStateMobx } from './form-state-mobx';
 import { FormStateStyleComponent } from './form-state-style-component';
 import { FormStateMaterialUI } from './form-state-material-ui';
-import { AppModel } from '../model/app-model';
-
-const appModel = new AppModel();
+import { AppModelProvider } from './app-model-context';
 
 render(<>
-  <FunctionApp level={1} title="Hello">
-    <FunctionApp level={2} title="ReactState">
-      <FormStateFull />
+  <AppModelProvider>
+    <FunctionApp level={1} title="Hello">
+      <FunctionApp level={2} title="ReactState">
+        <FormStateFull />
+      </FunctionApp>
+      <FunctionApp level={2} title="ReactState">
+        <FormStateMobx />
+      </FunctionApp>
+      <FunctionApp level={2} title="Component">
+        <FormStateStyleComponent />
+      </FunctionApp>
+      <FunctionApp level={2} title="Component">
+        <FormStateMaterialUI />
+      </FunctionApp>
     </FunctionApp>
-    <FunctionApp level={2} title="ReactState">
-      <FormStateMobx />
-    </FunctionApp>
-    <FunctionApp level={2} title="Component">
-      <FormStateStyleComponent />
-    </FunctionApp>
-    <FunctionApp level={2} title="Component">
-      <FormStateMaterialUI app={appModel} />
-    </FunctionApp>
-  </FunctionApp>
+  </AppModelProvider>
 </>, document.getElementById('root'));

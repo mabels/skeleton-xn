@@ -1,27 +1,62 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
-import { Card, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import {
+  Card,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText
+} from '@material-ui/core';
 import FolderIcon from '@material-ui/icons/Folder';
-import { AppModelProp } from '../app-model-prop';
+import { AppModelContext } from '../app-model-context';
+import { AppModel } from '../../model/app-model';
 
-export interface AppStatusProps extends AppModelProp {
-}
+export interface AppStatusProps {}
 
-export const AppStatus = observer((props: AppStatusProps) => {
-  return <Card>
-    <List>
+const AppList = observer(({ app }: { app: AppModel }) => {
+  return (
+    <>
       <ListItem>
         <ListItemIcon>
-            <FolderIcon />
+          <FolderIcon />
         </ListItemIcon>
-        <ListItemText primary={props.app.ticker.value} />
+        <ListItemText primary={app.ticker.value} />
       </ListItem>
       <ListItem>
         <ListItemIcon>
-            <FolderIcon />
+          <FolderIcon />
         </ListItemIcon>
-        <ListItemText primary={props.app.whatToSay.get()} />
+        <ListItemText primary={app.whatToSay.get()} />
       </ListItem>
-    </List>
-    </Card>;
+    </>
+  );
 });
+
+export const AppStatus = (props: AppStatusProps) => {
+  return (
+    <Card>
+      <List>
+        <AppModelContext.Consumer>
+          {(app: AppModel) => <AppList app={app} />}
+        </AppModelContext.Consumer>
+      </List>
+    </Card>
+  );
+};
+
+          /* {(app: AppModel) => (
+            <>
+              <ListItem>
+                <ListItemIcon>
+                  <FolderIcon />
+                </ListItemIcon>
+                <ListItemText primary={app.ticker.value} />
+              </ListItem>
+              <ListItem>
+                <ListItemIcon>
+                  <FolderIcon />
+                </ListItemIcon>
+                <ListItemText primary={app.whatToSay.get()} />
+              </ListItem>
+            </>
+          )} */

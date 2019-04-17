@@ -7,7 +7,6 @@ export interface FunctionAppProps {
 }
 
 export function FunctionApp(props: FunctionAppProps): JSX.Element {
-  const Header = React.createElement(`h${props.level}`);
   return <>
     {React.createElement(`h${props.level}`, {}, props.title)}
     {React.Children.map(props.children, e => <div>{e}</div>)}
