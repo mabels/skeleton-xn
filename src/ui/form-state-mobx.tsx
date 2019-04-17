@@ -5,6 +5,24 @@ import { observer } from 'mobx-react';
 export interface FormStateFullProps {
   className?: string;
   title?: string;
+  tickFreq?: number;
+}
+
+interface InputStringProps {
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export function InputString(props: InputStringProps): JSX.Element {
+  return <input type="text" value={props.value} onChange={props.onChange} />;
+}
+
+export function LiWhatToSay({ value }: {value: string}): JSX.Element {
+  return <li>{value}</li>;
+}
+
+export function LiTick({ value }: {value: number}): JSX.Element {
+  return <li>{value}</li>;
 }
 
 @observer
@@ -26,7 +44,7 @@ export class FormStateMobx extends React.Component<FormStateFullProps> {
   public componentDidMount() {
     this.timer = setInterval(action(() => {
       this.tick++;
-    }), 1000);
+    }), this.props.tickFreq || 1000);
   }
 
   public componentWillUnmount() {
@@ -34,7 +52,8 @@ export class FormStateMobx extends React.Component<FormStateFullProps> {
   }
 
   @action
-  public inputWhatToSay = (e: React.FormEvent<HTMLInputElement>) => {
+  public onChangeWhatToSay = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // console.log('onChangeWhatToSay:', e.currentTarget.value);
     this.whatToSay = e.currentTarget.value;
   }
 
@@ -43,12 +62,12 @@ export class FormStateMobx extends React.Component<FormStateFullProps> {
       <form>
         <fieldset>
           <label>What to say</label>
-          <input type="text" value={this.whatToSay} onChange={this.inputWhatToSay} />
+          <InputString value={this.whatToSay} onChange={this.onChangeWhatToSay} />
         </fieldset>
       </form>
       <ul>
-        <li>{this.tick}</li>
-        <li>{this.whatToSay}</li>
+        <LiTick value={this.tick} />
+        <LiWhatToSay value={this.whatToSay} />
       </ul>
     </div>;
   }

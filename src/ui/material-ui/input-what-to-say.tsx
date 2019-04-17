@@ -7,7 +7,7 @@ import { AppModel } from '../../model/app-model';
 
 export interface InputWhatToSayProps {}
 
-export const InputObserableString = observer(
+export const InputObservableString = observer(
   (props: { value: IObservableValue<string> }): JSX.Element => {
     return (
       <Card>
@@ -15,9 +15,10 @@ export const InputObserableString = observer(
           <TextField
             label="What to say"
             value={props.value.get()}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              props.value.set(e.currentTarget.value)
-            }
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              console.log(`InputObservableString:`, e.currentTarget.value);
+              props.value.set(e.currentTarget.value);
+            }}
             margin="normal"
             variant="outlined"
           />
@@ -30,7 +31,7 @@ export const InputObserableString = observer(
 export function InputWhatToSay(props: InputWhatToSayProps): JSX.Element {
   return (
     <AppModelContext.Consumer>
-      {(app: AppModel) => <InputObserableString value={app.whatToSay} />}
+      {(app: AppModel) => <InputObservableString value={app.whatToSay} />}
     </AppModelContext.Consumer>
   );
 }

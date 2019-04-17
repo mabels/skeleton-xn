@@ -18,7 +18,7 @@ const webpack = require('webpack');
 module.exports = [{
   mode: 'development',
   target: 'web',
-  entry: './src/ui/app.tsx',
+  entry: './src/ui/app.ts',
   output: {
     path: __dirname + '/dist',
     filename: 'app.js'

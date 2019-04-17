@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { observer } from 'mobx-react';
+import { observer, Observer } from 'mobx-react';
 import {
   Card,
   List,
@@ -10,6 +10,7 @@ import {
 import FolderIcon from '@material-ui/icons/Folder';
 import { AppModelContext } from '../app-model-context';
 import { AppModel } from '../../model/app-model';
+import { ListItemTextProps } from '@material-ui/core/ListItemText';
 
 export interface AppStatusProps {}
 
@@ -32,6 +33,14 @@ const AppList = observer(({ app }: { app: AppModel }) => {
   );
 });
 
+export function ListItemTextWhatToSay(props: ListItemTextProps): JSX.Element  {
+  return <ListItemText {...props} />;
+}
+
+export function ListItemTextTicker(props: ListItemTextProps): JSX.Element  {
+  return <ListItemText {...props} />;
+}
+
 export const AppStatus = (props: AppStatusProps) => {
   return (
     <Card>
@@ -43,20 +52,3 @@ export const AppStatus = (props: AppStatusProps) => {
     </Card>
   );
 };
-
-          /* {(app: AppModel) => (
-            <>
-              <ListItem>
-                <ListItemIcon>
-                  <FolderIcon />
-                </ListItemIcon>
-                <ListItemText primary={app.ticker.value} />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <FolderIcon />
-                </ListItemIcon>
-                <ListItemText primary={app.whatToSay.get()} />
-              </ListItem>
-            </>
-          )} */

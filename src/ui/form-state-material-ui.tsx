@@ -27,6 +27,7 @@ export class LifeCycleAppModel extends React.Component<LifeCycleAppModelProps> {
 
 export interface FormStateMaterialUIProps {
   readonly title?: string;
+  readonly tickFreq?: number;
 }
 
 export function FormStateMaterialUI(props: FormStateMaterialUIProps): JSX.Element {
