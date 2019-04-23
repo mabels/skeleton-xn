@@ -6,7 +6,7 @@ export async function expectTicker(
   return new Promise((rs, rj) => {
     setTimeout(() => {
       try {
-        expect(ticked.getDOMNode().textContent).toBe('3');
+        expect(~~ticked.getDOMNode().textContent).toBeGreaterThanOrEqual(3);
         rs();
       } catch (e) {
         rj(e);

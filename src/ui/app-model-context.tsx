@@ -1,17 +1,20 @@
 import * as React from 'react';
+import { observable, IObservableValue } from 'mobx';
 import { AppModel, AppModelImpl } from '../model/app-model';
 import { TickerAgentInit } from '../agents/ticker-agent';
 
-export let appModel: AppModel;
+export type ObservableAppModel = IObservableValue<AppModel>;
+export let observableAppModel: ObservableAppModel = observable.box();
 
-export const AppModelContext: React.Context<React.PropsWithChildren<AppModel>> = React.createContext(appModel);
+export const AppModelContext: React.Context<React.PropsWithChildren<AppModel>> =
+  React.createContext(undefined as unknown as AppModel);
 
 export interface AppModelProps extends TickerAgentInit {
 }
 
 export function AppModelProvider(props: React.PropsWithChildren<AppModelProps>): JSX.Element {
-  if (!appModel) {
-    appModel = new AppModelImpl(props);
+  if (!observableAppModel.get()) {
+    observableAppModel.set(new AppModelImpl(props));
   }
-  return <AppModelContext.Provider value={appModel}>{props.children}</AppModelContext.Provider>;
+  return <AppModelContext.Provider value={observableAppModel.get()}>{props.children}</AppModelContext.Provider>;
 }

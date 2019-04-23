@@ -16,7 +16,6 @@ export const InputObservableString = observer(
             label="What to say"
             value={props.value.get()}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              console.log(`InputObservableString:`, e.currentTarget.value);
               props.value.set(e.currentTarget.value);
             }}
             margin="normal"

@@ -32,8 +32,8 @@ export interface FormStateMaterialUIProps {
 
 export function FormStateMaterialUI(props: FormStateMaterialUIProps): JSX.Element {
   return <>
-    <AppModelContext.Consumer>{(app: AppModel) => <LifeCycleAppModel app={app} />}</AppModelContext.Consumer>
     {CssBaseline}
+    <AppModelContext.Consumer>{(app: AppModel) => <LifeCycleAppModel app={app} />}</AppModelContext.Consumer>
     <InputWhatToSay />
     <AppStatus />
   </>;

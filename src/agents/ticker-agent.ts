@@ -19,7 +19,7 @@ export class TickerAgent {
   constructor(props?: TickerAgentInit) {
     props = props || {};
     this.tickFreq = props.tickFreq || 1000;
-    console.log('TickerAgent:', props.tickFreq);
+    // console.log('TickerAgent:', props.tickFreq);
   }
 
   public start() {

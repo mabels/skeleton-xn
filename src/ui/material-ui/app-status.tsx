@@ -14,6 +14,14 @@ import { ListItemTextProps } from '@material-ui/core/ListItemText';
 
 export interface AppStatusProps {}
 
+export function ListItemTextWhatToSay(props: ListItemTextProps): JSX.Element {
+  return <ListItemText {...props} />;
+}
+
+export function ListItemTextTicker(props: ListItemTextProps): JSX.Element {
+  return <ListItemText {...props} />;
+}
+
 const AppList = observer(({ app }: { app: AppModel }) => {
   return (
     <>
@@ -21,25 +29,17 @@ const AppList = observer(({ app }: { app: AppModel }) => {
         <ListItemIcon>
           <FolderIcon />
         </ListItemIcon>
-        <ListItemText primary={app.ticker.value} />
+        <ListItemTextTicker primary={app.ticker.value} />
       </ListItem>
       <ListItem>
         <ListItemIcon>
           <FolderIcon />
         </ListItemIcon>
-        <ListItemText primary={app.whatToSay.get()} />
+        <ListItemTextWhatToSay primary={app.whatToSay.get()} />
       </ListItem>
     </>
   );
 });
-
-export function ListItemTextWhatToSay(props: ListItemTextProps): JSX.Element  {
-  return <ListItemText {...props} />;
-}
-
-export function ListItemTextTicker(props: ListItemTextProps): JSX.Element  {
-  return <ListItemText {...props} />;
-}
 
 export const AppStatus = (props: AppStatusProps) => {
   return (
