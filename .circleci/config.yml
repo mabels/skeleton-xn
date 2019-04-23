@@ -22,7 +22,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: npm install
+      - run: yarn
       - run: npm audit
 
 
@@ -31,5 +31,5 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run: npm run build
-      - run: npm run test 
+      - run: yarn build
+      - run: yarn test 
