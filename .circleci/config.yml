@@ -23,7 +23,7 @@ jobs:
             - v1-dependencies-
 
       - run: yarn
-      - run: npm audit
+      - run: yarn audit
 
 
       - save_cache:

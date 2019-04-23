@@ -52,7 +52,7 @@
     "ts-jest": "24.0.2",
     "ts-loader": "^5.3.3",
     "ts-node": "8.0.1",
-    "tslint": "5.12.1",
+    "tslint": "5.15.0",
     "typescript": "^3.3.3",
     "webpack": "4.28.4",
     "webpack-cli": "3.2.1",
