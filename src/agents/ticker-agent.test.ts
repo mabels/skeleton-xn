@@ -23,7 +23,7 @@ describe('ticker', () => {
       }
       setTimeout(() => {
         try {
-          expect(fn).toBeCalledTimes(2);
+          expect(fn.mock.calls.length).toBeGreaterThanOrEqual(2);
           // nesting support
           ta.stop();
           ta.stop();
