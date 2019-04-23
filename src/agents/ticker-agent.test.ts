@@ -33,7 +33,7 @@ describe('ticker', () => {
         }
         setTimeout(() => {
           try {
-            expect(fn).toBeCalledTimes(2);
+            expect(fn.mock.calls.length).toBeGreaterThanOrEqual(3);
             done();
           } catch (e) {
             done(e);
