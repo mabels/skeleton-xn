@@ -19,21 +19,21 @@ export class TickerAgent {
   constructor(props?: TickerAgentInit) {
     props = props || {};
     this.tickFreq = props.tickFreq || 1000;
-    // console.log('TickerAgent:', props.tickFreq);
+    console.log('TickerAgent:', props.tickFreq);
   }
 
   public start() {
     if (this.nestCount++ === 0) {
-      // console.log('Ticker:start', this.objectId);
+      console.log('Ticker:start', this.objectId);
       this.timer = setInterval(action(() => {
-        // console.log('Tick', this.objectId);
+        console.log('Tick', this.objectId);
         this.tick++;
       }), this.tickFreq);
     }
   }
 
   public stop() {
-    // console.log('Ticker:stop', this.objectId);
+    console.log('Ticker:stop', this.objectId);
     if (--this.nestCount == 0) {
       clearInterval(this.timer);
     }

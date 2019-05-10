@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Skeleton for learning how to write modern webapps",
   "keywords": [],
-  "main": "src/index",
+  "main": "dist/expo/react-native.js",
   "repository": {
     "type": "git",
     "url": "mabels/skeleton-xn"
@@ -14,6 +14,9 @@
   },
   "homepage": "https://github.com/mabels/skeleton-xn#readme",
   "dependencies": {
+    "expo": "^32.0.0",
+    "native-base": "^2.12.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.10",
     "@material-ui/core": "^3.9.3",
@@ -27,6 +30,9 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
+    "@types/expo": "^32.0.13",
+    "@types/react-native": "^0.57.51",
+    "babel-preset-expo": "^5.0.0",
     "@babel/core": "^7.4.3",
     "@storybook/addon-actions": "^5.0.9",
     "@storybook/addon-links": "^5.0.9",
@@ -61,7 +67,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
-    "compile": "tsc",
+    "compile": "tsc -",
     "depcheck": "depcheck",
     "webpack": "webpack",
     "build": "tsc && webpack",
@@ -76,7 +82,11 @@
     "postversion": "git push && git push --tags",
     "prepublish": "not-in-install && npm run build || echo 'In install cycle, skipping prepublish'",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "expo-start": "expo start",
+    "expo-android": "expo start --android",
+    "expo-ios": "expo start --ios",
+    "expo-eject": "expo eject"
   },
   "publishConfig": {
     "tag": "next"
