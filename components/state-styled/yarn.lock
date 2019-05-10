@@ -400,6 +400,14 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^12.0.9"
 
+"@skeleton-xn/state-mobx@file:../state-mobx":
+  version "1.0.0"
+  dependencies:
+    mobx "^5.9.4"
+    mobx-react "^5.4.3"
+    react "^16.8.6"
+    react-dom "^16.8.6"
+
 "@types/babel__core@^7.1.0":
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.1.tgz#ce9a9e5d92b7031421e1d0d74ae59f572ba48be6"

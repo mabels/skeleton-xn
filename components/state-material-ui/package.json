@@ -1,7 +1,7 @@
 {
   "name": "@skeleton-xn/state-material-ui",
   "version": "1.0.0",
-  "main": "dist/state-mobx.js",
+  "main": "dist/state-material-ui.js",
   "author": "Meno Abels",
   "license": "AFL-2.0",
   "scripts": {

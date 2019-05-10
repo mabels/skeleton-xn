@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Header } from '@skeleton-xn/header';
 import { StateFull } from '@skeleton-xn/state-full';
 import { StateMobx } from '@skeleton-xn/state-mobx';
-import { StateStyleComponent } from '@skeleton-xn/state-style-component';
+import { StateStyled } from '@skeleton-xn/state-styled';
 import { StateMaterialUI } from '@skeleton-xn/state-material-ui';
 import { AppModelProvider } from '@skeleton-xn/app-model-context';
 
@@ -18,7 +18,7 @@ export function AppBase() {
           <StateMobx />
         </Header>
         <Header level={2} title="Component">
-          <StateStyleComponent />
+          <StateStyled />
         </Header>
         <Header level={2} title="Component">
           <StateMaterialUI />

@@ -1,7 +1,7 @@
 {
   "name": "@skeleton-xn/state-styled",
   "version": "1.0.0",
-  "main": "dist/state-mobx.js",
+  "main": "dist/state-styled.js",
   "author": "Meno Abels",
   "license": "AFL-2.0",
   "scripts": {
@@ -25,6 +25,7 @@
     "typescript": "^3.4.5"
   },
   "dependencies": {
+    "@skeleton-xn/state-mobx": "file:../state-mobx",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.11",
     "mobx": "^5.9.4",

@@ -18,7 +18,7 @@ const webpack = require('webpack');
 module.exports = [{
   mode: 'development',
   target: 'web',
-  entry: './src/ui/app.ts',
+  entry: './src/app.ts',
   output: {
     path: __dirname + '/dist',
     filename: 'app.js'
@@ -62,7 +62,7 @@ module.exports = [{
   },
   plugins: [
     new HtmlWebpackPlugin({
-       template: './src/ui/index.ejs'
+       template: './src/index.ejs'
     }),
   ]
 }
