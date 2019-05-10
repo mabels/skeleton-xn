@@ -26,8 +26,13 @@ module.exports = [{
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /^.+\.tsx?$/,
+        // exclude: [ 
+        //     "**/*test.ts",
+        //     "**/*test.tsx"
+        // ],
         loader: 'ts-loader'
+
       },
       /*
       {
