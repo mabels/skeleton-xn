@@ -5,11 +5,13 @@
   "author": "Meno Abels",
   "license": "AFL-2.0",
   "scripts": {
+    "clean": "rimraf dist",
     "build": "tsc",
     "test": "jest -c jest.unit.js",
     "lint": "tslint --project ."
   },
   "devDependencies": {
+    "rimraf": "*",
     "@types/jest": "^24.0.12",
     "@types/uuid": "^3.4.4",
     "jest": "^24.8.0",

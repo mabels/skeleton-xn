@@ -19,11 +19,15 @@ export class StateFull extends React.Component<StateFullProps, StateFullState> {
       whatToSay: '',
       tick: 0
     };
+    // this.handleInput = this.handleInput.bind(this);
   }
 
   public componentDidMount() {
     this.timer = setInterval(() => {
-      // this.state.tick++;
+      this.setState({
+        tick: this.state.tick + 1
+      });
+      //  this.state.tick++;
     }, 1000);
   }
 
@@ -31,12 +35,17 @@ export class StateFull extends React.Component<StateFullProps, StateFullState> {
     clearInterval(this.timer);
   }
 
+  private readonly handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+      this.setState({ whatToSay: e.target.value });
+
+  }
+
   public render() {
     return <>
       <form>
         <fieldset>
           <label>What to say</label>
-          <input type="text" value={this.state.whatToSay} />
+          <input type="text" value={this.state.whatToSay} onChange={this.handleInput} />
         </fieldset>
       </form>
       <ul>

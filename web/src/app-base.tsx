@@ -11,16 +11,16 @@ export function AppBase() {
   return (
     <AppModelProvider>
       <Header level={1} title="Hello">
-        <Header level={2} title="ReactState">
+        <Header level={2} title="StateFull">
           <StateFull />
         </Header>
-        <Header level={2} title="ReactState">
+        <Header level={2} title="StateMobx">
           <StateMobx />
         </Header>
-        <Header level={2} title="Component">
+        <Header level={2} title="StateStyled">
           <StateStyled />
         </Header>
-        <Header level={2} title="Component">
+        <Header level={2} title="StateMaterialUI">
           <StateMaterialUI />
         </Header>
       </Header>

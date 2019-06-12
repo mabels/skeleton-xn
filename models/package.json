@@ -5,11 +5,13 @@
   "author": "Meno Abels",
   "license": "AFL-2.0",
   "scripts": {
+    "rimraf": "*",
     "build": "tsc",
     "test": "jest -c jest.unit.js",
     "lint": "tslint --project ."
   },
   "devDependencies": {
+    "rimraf": "*",
     "@types/uuid": "^3.4.4",
     "@types/jest": "^24.0.12",
     "@types/uuid": "^3.4.4",
@@ -20,7 +22,7 @@
     "typescript": "^3.4.5"
   },
   "dependencies": {
-    "@skeleton-xn/agents": "file:../agents",
+    "@skeleton-xn/agents": "*",
     "uuid": "^3.3.2",
     "mobx": "^5.9.4"
   }

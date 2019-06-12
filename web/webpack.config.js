@@ -27,6 +27,18 @@ module.exports = [{
     rules: [
       {
         test: /^.+\.tsx?$/,
+        /*
+        include: [
+          path.resolve(__dirname, '../agents'),
+          path.resolve(__dirname, '../components/app-model-context'),
+          path.resolve(__dirname, '../components/header'),
+          path.resolve(__dirname, '../components/state-full'),
+          path.resolve(__dirname, '../components/state-material-ui'),
+          path.resolve(__dirname, '../components/state-mobx'),
+          path.resolve(__dirname, '../components/state-styled'),
+          path.resolve(__dirname, '../models'),
+        ],
+        */
         // exclude: [ 
         //     "**/*test.ts",
         //     "**/*test.tsx"

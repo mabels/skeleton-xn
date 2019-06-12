@@ -1,0 +1,13 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "clean": "lerna run clean",
+    "dist-clean": "lerna exec 'rm -rf node_modules' && rm -rf node_modules",
+    "install": "lerna bootstrap",
+    "build": "lerna run build"
+  },
+  "devDependencies": {
+    "lerna": "^3.15.0"
+  }
+}
