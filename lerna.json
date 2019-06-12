@@ -1,9 +1,4 @@
 {
-  "packages": [
-    "agents",
-    "components/*",
-    "models",
-    "web"
-  ],
+  "npmClient": "yarn",
   "version": "0.0.0"
 }

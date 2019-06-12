@@ -2,6 +2,7 @@
   "name": "@skeleton-xn/app-model-context",
   "version": "1.0.0",
   "main": "dist/index.js",
+  "@skeleton-xn/main": "src/index.ts",
   "author": "Meno Abels",
   "license": "AFL-2.0",
   "scripts": {

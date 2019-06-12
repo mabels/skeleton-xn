@@ -2,6 +2,7 @@
   "name": "@skeleton-xn/header",
   "version": "1.0.0",
   "main": "dist/header.js",
+  "@skeleton-xn/main": "src/header.tsx",
   "author": "Meno Abels",
   "license": "AFL-2.0",
   "scripts": {

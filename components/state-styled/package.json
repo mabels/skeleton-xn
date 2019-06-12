@@ -2,6 +2,7 @@
   "name": "@skeleton-xn/state-styled",
   "version": "1.0.0",
   "main": "dist/state-styled.js",
+  "@skeleton-xn/main": "src/state-styled.tsx",
   "author": "Meno Abels",
   "license": "AFL-2.0",
   "scripts": {
