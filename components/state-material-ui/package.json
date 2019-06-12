@@ -2,6 +2,7 @@
   "name": "@skeleton-xn/state-material-ui",
   "version": "1.0.0",
   "main": "dist/state-material-ui.js",
+  "@skeleton-xn/main": "src/state-material-ui.tsx",
   "author": "Meno Abels",
   "license": "AFL-2.0",
   "scripts": {

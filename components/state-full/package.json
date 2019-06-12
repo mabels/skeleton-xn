@@ -2,6 +2,7 @@
   "name": "@skeleton-xn/state-full",
   "version": "1.0.0",
   "main": "dist/state-full.js",
+  "@skeleton-xn/main": "src/state-full.tsx",
   "author": "Meno Abels",
   "license": "AFL-2.0",
   "scripts": {

@@ -2,6 +2,7 @@
   "name": "@skeleton-xn/models",
   "version": "1.0.0",
   "main": "dist/app-model.js",
+  "@skeleton-xn/main": "src/app-model.ts",
   "author": "Meno Abels",
   "license": "AFL-2.0",
   "scripts": {

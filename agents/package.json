@@ -2,6 +2,7 @@
   "name": "@skeleton-xn/agents",
   "version": "1.0.0",
   "main": "dist/ticker-agent.js",
+  "@skeleton-xn/main": "src/ticker-agent.ts",
   "author": "Meno Abels",
   "license": "AFL-2.0",
   "scripts": {
