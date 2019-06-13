@@ -1,19 +1,23 @@
 import * as React from 'react';
-// import { StyleSheet, Text, View } from 'react-native';
-// import { observer } from 'mobx-react';
-import { AppModelProvider } from '../ui/app-model-context';
+
+import { AppModelProvider } from '@skeleton-xn/app-model-context';
 import { FormStateExpo } from './form-state-expo';
 
 import { KeepAwake, registerRootComponent } from 'expo';
+import { InitialProps } from 'expo/build/launch/withExpoRoot.types';
 
 if (__DEV__) {
   KeepAwake.activate();
 }
 
-function App() {
-  return <AppModelProvider>
-    <FormStateExpo />
-  </AppModelProvider>;
+class App extends React.Component<InitialProps> {
+  render(): JSX.Element {
+    return (
+      <AppModelProvider>
+        <FormStateExpo />
+      </AppModelProvider>
+    );
+  }
 }
 
 registerRootComponent(App);

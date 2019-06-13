@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { LifeCycleAppModel } from '../ui/life-cycle-app-model';
+import { LifeCycleAppModel } from '@skeleton-xn/app-model-context';
 import { AppStatus } from './app-status';
 import { InputWhatToSay } from './input-what-to-say';
 import { Card, Text, Header, Container } from 'native-base';

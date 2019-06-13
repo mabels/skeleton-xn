@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Input, Content, Form, Textarea, Text, Container, ListItem, List } from 'native-base';
-import { AppModelContext } from '../ui/app-model-context';
+import { AppModelContext } from '@skeleton-xn/app-model-context';
 import { observer } from 'mobx-react';
-import { AppModel } from '../model/app-model';
+import { AppModel } from '@skeleton-xn/models';
 
 const InternalInputWhatToSay = observer(({model}: {model: AppModel}) =>
     <List>
