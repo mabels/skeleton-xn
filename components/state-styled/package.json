@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@skeleton-xn/state-mobx": "*",
+    "@skeleton-xn/app-model-context": "*",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.11",
     "mobx": "^5.9.4",

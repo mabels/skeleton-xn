@@ -12,7 +12,6 @@ export interface StateMaterialUIProps {
 export function StateMaterialUI(props: StateMaterialUIProps): JSX.Element {
   return <>
     {CssBaseline}
-    <LifeCycleAppModel />
     <InputWhatToSay />
     <AppStatus />
   </>;

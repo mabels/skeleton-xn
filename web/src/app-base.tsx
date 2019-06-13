@@ -5,11 +5,12 @@ import { StateFull } from '@skeleton-xn/state-full';
 import { StateMobx } from '@skeleton-xn/state-mobx';
 import { StateStyled } from '@skeleton-xn/state-styled';
 import { StateMaterialUI } from '@skeleton-xn/state-material-ui';
-import { AppModelProvider } from '@skeleton-xn/app-model-context';
+import { AppModelProvider, LifeCycleAppModel } from '@skeleton-xn/app-model-context';
 
 export function AppBase() {
   return (
     <AppModelProvider>
+      <LifeCycleAppModel />
       <Header level={1} title="Hello">
         <Header level={2} title="StateFull">
           <StateFull />

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { observable, action } from 'mobx';
+import { observable, action, IObservable, IObservableValue } from 'mobx';
 import { observer } from 'mobx-react';
 
 export interface StateMobxProps {
