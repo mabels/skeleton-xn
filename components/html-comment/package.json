@@ -1,5 +1,5 @@
 {
-  "name": "@skeleton-xn/app-model-context",
+  "name": "@skeleton-xn/comment",
   "version": "1.0.0",
   "main": "dist/index.js",
   "@skeleton-xn/main": "src/index.ts",
@@ -27,8 +27,6 @@
     "typescript": "^3.4.5"
   },
   "dependencies": {
-    "@skeleton-xn/models": "1.0.0",
-    "@skeleton-xn/agents": "1.0.0",
     "mobx": "^5.9.4",
     "mobx-react": "^5.4.3",
     "react": "^16.8.6",

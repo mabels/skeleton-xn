@@ -15,8 +15,8 @@
   "homepage": "https://github.com/mabels/skeleton-xn#readme",
   "dependencies": {
     "@skeleton-xn/app-model-context": "1.0.0",
-    "@skeleton-xn/agents": "*",
-    "@skeleton-xn/models": "*",
+    "@skeleton-xn/models": "1.0.0",
+    "@skeleton-xn/agents": "1.0.0",
     "expo": "^33.0.5",
     "native-base": "^2.12.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
