@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { renderToString } from 'react-dom/server';
 
-// tslint:disable-next-line:no-any
-function replacer(match: any,
+function replacer(
+  _match: {},
   prefixComment: string,
   suffixComment: string,
   comment: string,
-  offset: number,
-  str: string,
+  _offset: number,
+  _str: string,
 ): string {
   return `<${prefixComment}${comment}${suffixComment}>`;
 }

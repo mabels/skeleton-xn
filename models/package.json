@@ -5,8 +5,9 @@
   "@skeleton-xn/main": "src/app-model.ts",
   "author": "Meno Abels",
   "license": "AFL-2.0",
+  "private": true,
   "scripts": {
-    "rimraf": "*",
+    "clean": "rimraf dist",
     "build": "tsc",
     "test": "jest -c jest.unit.js",
     "lint": "tslint --project ."

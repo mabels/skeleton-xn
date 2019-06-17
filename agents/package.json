@@ -5,6 +5,7 @@
   "@skeleton-xn/main": "src/ticker-agent.ts",
   "author": "Meno Abels",
   "license": "AFL-2.0",
+  "private": true,
   "scripts": {
     "clean": "rimraf dist",
     "build": "tsc",

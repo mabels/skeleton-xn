@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "clean": "lerna run clean",
+    "install": "lerna run install",
     "dist-clean": "lerna exec 'rm -rf node_modules' && rm -rf node_modules",
     "build": "lerna run build"
   },
