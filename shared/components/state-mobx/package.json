@@ -1,0 +1,36 @@
+{
+  "name": "@skeleton-xn/state-mobx",
+  "version": "1.0.0",
+  "main": "dist/state-mobx.js",
+  "@skeleton-xn/main": "src/state-mobx.tsx",
+  "author": "Meno Abels",
+  "license": "AFL-2.0",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc",
+    "test": "jest -c jest.unit.js",
+    "lint": "tslint --project ."
+  },
+  "devDependencies": {
+    "rimraf": "*",
+    "@skeleton-xn/test-utils": "1.0.0",
+    "@types/enzyme": "^3.9.1",
+    "@types/jest": "^24.0.12",
+    "@types/react": "^16.8.19",
+    "@types/react-test-renderer": "^16.8.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "jest": "^24.8.0",
+    "jest-cli": "^24.8.0",
+    "react-test-renderer": "^16.8.6",
+    "ts-jest": "^24.0.2",
+    "ts-lint": "^4.5.1",
+    "typescript": "^3.4.5"
+  },
+  "dependencies": {
+    "mobx": "^5.9.4",
+    "mobx-react": "^5.4.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}

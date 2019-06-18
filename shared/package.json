@@ -1,0 +1,25 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "clean": "lerna run clean",
+    "install": "lerna run install",
+    "dist-clean": "lerna exec 'rm -rf node_modules dist' && rm -rf node_modules dist",
+    "build": "lerna run build",
+    "test": "lerna run test",
+    "postinstall": "lerna bootstrap"
+  },
+  "devDependencies": {
+    "lerna": "^3.15.0"
+  },
+  "resolutions": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "jsdom": "^15.1.0",
+    "react-test-renderer": "^16.8.6",
+    "@types/react-test-renderer": "^16.8.2",
+    "@types/react": "^16.8.20",
+    "@types/react-dom": "^16.8.4",
+    "@types/prop-types": "15.7.0"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "npmClient": "yarn",
+  "version": "0.0.0",
+  "packages": [
+    "agents",
+    "test-utils",
+    "components/*",
+    "models",
+    "web"
+  ]
+}
