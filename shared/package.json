@@ -13,13 +13,21 @@
     "lerna": "^3.15.0"
   },
   "resolutions": {
+    "typescript": "^3.5.2",
+    "jest-emotion": "file:./jest-emotion-v10.0.11.tgz",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "jsdom": "^15.1.0",
     "react-test-renderer": "^16.8.6",
+    "@types/node": "^12.0.8",
     "@types/react-test-renderer": "^16.8.2",
     "@types/react": "^16.8.20",
     "@types/react-dom": "^16.8.4",
     "@types/prop-types": "15.7.0"
-  }
+  },
+  "workspaces": [    "agents",
+    "test-utils",
+    "components/*",
+    "models",
+    "web"]
 }

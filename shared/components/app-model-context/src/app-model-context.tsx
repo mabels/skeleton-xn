@@ -1,26 +1,58 @@
 import * as React from 'react';
-import { observable, IObservableValue } from 'mobx';
+import { observable, IObservableValue, reaction, IReactionDisposer } from 'mobx';
+import { observer } from 'mobx-react';
 import { AppModel, AppModelImpl } from '@skeleton-xn/models';
 import { TickerAgentInit } from '@skeleton-xn/agents';
+import { jsxAttribute } from '@babel/types';
 
 export type ObservableAppModel = IObservableValue<AppModel>;
 export const observableAppModel: ObservableAppModel = observable.box();
 
+/*
 export const AppModelContext: React.Context<React.PropsWithChildren<AppModel>> =
   React.createContext(undefined as unknown as AppModel);
+*/
 
-export interface AppModelProps extends TickerAgentInit {
+type AppProviderProps = React.PropsWithChildren<{ value: AppModel }>;
+
+class AppProvider extends React.Component<AppProviderProps> {
+  public render() {
+    return this.props.children;
+  }
 }
 
-export function getAppModel(): AppModel {
+type AppModelFn = (app: AppModel) => JSX.Element;
+
+const appConsumer = observer((props: React.PropsWithChildren<{}>) => {
+  const model = observableAppModel.get();
+  console.log('appComsumer:', model);
+  if (model) {
+    return (props.children as AppModelFn)(model);
+  } else {
+    return null;
+  }
+});
+
+export const AppModelContext = {
+  Provider: (props: AppProviderProps) => (
+    <AppProvider value={props.value}>{props.children}</AppProvider>
+  ),
+  Consumer: appConsumer
+};
+
+export interface AppModelProps extends TickerAgentInit {}
+
+export function getAppModel(props: AppModelProps = {}): AppModel {
+  if (!observableAppModel.get()) {
+    console.log('AppModelProvider:Create:', props);
+    observableAppModel.set(new AppModelImpl(props));
+  }
   return observableAppModel.get();
 }
 
 export function AppModelProvider(props: React.PropsWithChildren<AppModelProps>): JSX.Element {
-  if (!observableAppModel.get()) {
-    // console.log('AppModelProvider:Create', props);
-    observableAppModel.set(new AppModelImpl(props));
-  }
-  // console.log('AppModelProvider:Get:', observableAppModel.get(), props.children);
-  return <AppModelContext.Provider value={observableAppModel.get()}>{props.children}</AppModelContext.Provider>;
+  console.log('AppModelProvider:', props);
+  return (
+    <AppModelContext.Provider value={getAppModel(props)}>{props.children}</AppModelContext.Provider>
+  );
 }

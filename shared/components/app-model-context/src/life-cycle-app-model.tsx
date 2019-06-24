@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AppModelContext } from './app-model-context';
+import { AppModelContext, getAppModel } from './app-model-context';
 import { AppModel } from '@skeleton-xn/models';
 
 export interface LifeCycleAppModelProps {
@@ -23,8 +23,14 @@ class LifeCycleAppModelIntern extends React.Component<LifeCycleAppModelProps> {
 
 export function LifeCycleAppModel(): JSX.Element {
   return <AppModelContext.Consumer>{
-      (app: AppModel) =>
-        <LifeCycleAppModelIntern app={app} />
+      (app: AppModel) => {
+        if (!app) {
+          console.log('OOOOOOO', app);
+          app = getAppModel(); // enzym macht komische dinge
+        }
+        console.log('ZZZZZZZZZZ', app);
+        return <LifeCycleAppModelIntern app={app} />;
+      }
     }
   </AppModelContext.Consumer>;
 }

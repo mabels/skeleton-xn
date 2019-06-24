@@ -3,10 +3,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "clean": "rimraf node_modules",
-    "postinstall": "npm run preinstall:agents && npm run preinstall:models && npm run preinstall:app-model-context",
-    "preinstall:agents": "cd ../agents && npm run clean && npm run build", 
-    "preinstall:models": "cd ../models && npm run clean && npm run build", 
-    "preinstall:app-model-context": "cd ../components/app-model-context && npm run clean && npm run build", 
+    "preinstall": "cd ../shared && yarn && yarn build",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
@@ -29,9 +26,9 @@
     "@babel/plugin-transform-typescript": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/runtime": "^7.4.5",
-    "@skeleton-xn/agents": "file:../agents",
-    "@skeleton-xn/app-model-context": "file:../components/app-model-context",
-    "@skeleton-xn/models": "file:../models",
+    "@skeleton-xn/agents": "file:../shared/agents",
+    "@skeleton-xn/app-model-context": "file:../shared/components/app-model-context",
+    "@skeleton-xn/models": "file:../shared/models",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-react-native-web": "^0.11.4",
     "expo": "^33.0.0",
@@ -41,8 +38,14 @@
     "react-dom": "^16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
     "react-native-dotenv": "^0.2.0",
+    "react-native-material-ui": "^1.30.1",
     "react-native-web": "^0.11.4",
     "scheduler": "^0.14.0"
+  },
+  "resolutions": {
+    "@skeleton-xn/agents": "file:../shared/agents",
+    "@skeleton-xn/models": "file:../shared/models",
+    "@skeleton-xn/app-model-context": "file:../shared/components/app-model-context"
   },
   "devDependencies": {
     "@types/react": "^16.8.19",

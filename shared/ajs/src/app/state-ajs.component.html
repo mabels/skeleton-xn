@@ -1,0 +1,9 @@
+<h1>{{ title }}</h1>
+<input type="text"
+  *mobxReaction="reactionWhatToSay"
+  [value]="appModel.whatToSay.get()"
+  (input)="appModel.whatToSay.set($event.target.value)" />
+<ul>
+  <li *mobxReaction="reactionTickerFn">Ticker: {{appModel.ticker.value}}</li>
+  <li *mobxReaction="reactionWhatToSay">WhatToSay: {{appModel.whatToSay.get()}}</li>
+</ul>

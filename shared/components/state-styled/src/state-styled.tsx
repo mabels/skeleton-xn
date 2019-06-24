@@ -27,7 +27,7 @@ const LiWhatToSay = observer(({app}: { app: AppModel }): JSX.Element => {
 
 export function StateStyled(props: {}): JSX.Element {
   return <AppModelContext.Consumer>{(app: AppModel) => {
-      console.log('WWWWWW', app);
+      // console.log('WWWWWW', app);
       return <div>
         <form>
           <fieldset>
