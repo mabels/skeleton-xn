@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { AppModelImpl } from '../../../models';
-import { reaction } from 'mobx';
+import { AppModel } from '../../../models';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +7,9 @@ import { reaction } from 'mobx';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  private appModel = new AppModelImpl();
+  private appModel: AppModel = globalThis.observableAppModel.get();
+  // new AppModelImpl();
+  // private appModel = new AppModelImpl();
   ngOnInit() {
     console.log('AppComponent:', this.appModel.objectId);
     this.appModel.start();

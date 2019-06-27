@@ -1,6 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { AppModel } from '../../../models/dist/app-model';
-import { reaction } from 'mobx';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -18,4 +17,10 @@ export class StateAjsComponent implements OnInit {
 
   public reactionTickerFn = () => this.appModel.ticker.value;
   public reactionWhatToSay = () => this.appModel.whatToSay.get();
+  public get styleWhatToSay() {
+    return {
+      background: this.appModel.whatToSay.get().length % 2 ? 'orange' : 'pink'
+    };
+  }
+
 }

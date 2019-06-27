@@ -11,12 +11,11 @@
     "declaration": true,
     "moduleResolution": "node",
     "stripInternal": true,
+    "noEmit": false,
     "types": ["@emotion/core"],
     "plugins": [{ "name": "typescript-tslint-plugin" }]
   },
-  "include": [
-    "./src/**/*"
-  ],
+  "include": ["**/*.ts", "**/*.vue"],
   "exclude": [
     "**/*.test-helper.ts",
     "**/*.test-helper.tsx",

@@ -25,9 +25,12 @@
     "@types/react-dom": "^16.8.4",
     "@types/prop-types": "15.7.0"
   },
-  "workspaces": [    "agents",
+  "workspaces": [    
+    "agents",
+    "vue",
     "test-utils",
     "components/*",
     "models",
-    "web"]
+    "web"
+  ]
 }

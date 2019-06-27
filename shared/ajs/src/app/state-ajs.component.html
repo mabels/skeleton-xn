@@ -4,6 +4,12 @@
   [value]="appModel.whatToSay.get()"
   (input)="appModel.whatToSay.set($event.target.value)" />
 <ul>
-  <li *mobxReaction="reactionTickerFn">Ticker: {{appModel.ticker.value}}</li>
-  <li *mobxReaction="reactionWhatToSay">WhatToSay: {{appModel.whatToSay.get()}}</li>
+  <li
+      *mobxReaction="reactionTickerFn"
+      [style.background]="appModel.ticker.value % 2 ? 'red' : 'blue'"
+      >Ticker: {{appModel.ticker.value}}</li>
+  <li
+      *mobxReaction="reactionWhatToSay"
+      [ngStyle]="styleWhatToSay"
+      >WhatToSay: {{appModel.whatToSay.get()}}</li>
 </ul>

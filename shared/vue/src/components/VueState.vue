@@ -6,8 +6,8 @@
            @input="onChangeWhatToSay"
     />
     <ul>
-      <li>Ticker: {{appState.ticker.value}}</li>
       <li>InputValue: {{appState.whatToSay.get()}}</li>
+      <li>Ticker: {{appState.ticker.value}}</li>
     </ul>
   </div>
 </template>
@@ -18,7 +18,7 @@
 import { action, computed } from 'mobx';
 import { Observer } from 'mobx-vue';
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { AppModel } from '../../../models/dist/app-model';
+import { AppModel } from '@skeleton-xn/models';
 
 @Observer
 @Component
@@ -26,7 +26,7 @@ export default class VueState extends Vue {
   @Prop() private msg!: string;
   @Prop() private appState!: AppModel;
   public created() {
-    console.log('State', this.appState);
+    console.log('State', this.appState.objectId);
   }
   @action.bound
   public onChangeWhatToSay(e: any) {

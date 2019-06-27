@@ -6,7 +6,8 @@ import { TickerAgentInit } from '@skeleton-xn/agents';
 import { jsxAttribute } from '@babel/types';
 
 export type ObservableAppModel = IObservableValue<AppModel>;
-export const observableAppModel: ObservableAppModel = observable.box();
+(globalThis as any).observableAppModel = observable.box();
+const observableAppModel = (globalThis as any).observableAppModel;
 
 /*
 export const AppModelContext: React.Context<React.PropsWithChildren<AppModel>> =

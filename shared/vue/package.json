@@ -1,10 +1,11 @@
 {
-  "name": "vue",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@skeleton-xn/vue",
+  "version": "1.0.0",
+  "main": "src/lib.js",
+  "@skeleton-xn/main": "src/lib.ts",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "rollup --config build/rollup.config.js --format es --file dist/vue.esm.js",
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit"
@@ -23,8 +24,15 @@
     "@vue/cli-plugin-unit-jest": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
     "@vue/test-utils": "1.0.0-beta.29",
+    "babel-loader": "^8.0.6",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
     "ts-jest": "^23.0.0",
     "typescript": "^3.4.3",
+    "vue-loader": "^15.7.0",
+    "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.10"
   }
 }
