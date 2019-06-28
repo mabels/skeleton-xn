@@ -6,10 +6,11 @@ import { StateMobx } from '@skeleton-xn/state-mobx';
 import { StateStyled } from '@skeleton-xn/state-styled';
 import { StateMaterialUI } from '@skeleton-xn/state-material-ui';
 import { AppModelProvider, LifeCycleAppModel } from '@skeleton-xn/app-model-context';
+import { AppModel } from '../dist/models/src/app-model';
 
-export function AppBase() {
+export function AppBase({appModel}: {appModel: AppModel}) {
   return (
-    <AppModelProvider>
+    <AppModelProvider appModel={appModel}>
       <LifeCycleAppModel />
       <Header level={1} title="Hello">
         <Header level={2} title="StateFull">

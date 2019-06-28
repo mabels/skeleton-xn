@@ -2,15 +2,17 @@ import * as React from 'react';
 import { create } from 'react-test-renderer';
 
 import { AppModelProvider, AppModelContext } from './app-model-context';
+import { AppModelImpl, AppModel } from '@skeleton-xn/models';
 
 test('AppModel', () => {
   const fn = jest.fn();
+  const appModel = new AppModelImpl();
   const m = create(<>
-    <AppModelProvider>
-      <AppModelContext.Consumer>{(app) => { fn(app); return <></>; }}</AppModelContext.Consumer>
+    <AppModelProvider appModel={appModel}>
+      <AppModelContext.Consumer>{(app: AppModel) => { fn(app); return <></>; }}</AppModelContext.Consumer>
     </AppModelProvider>
-    <AppModelProvider>
-      <AppModelContext.Consumer>{(app) => { fn(app); return <></>; }}</AppModelContext.Consumer>
+    <AppModelProvider appModel={appModel}>
+      <AppModelContext.Consumer>{(app: AppModel) => { fn(app); return <></>; }}</AppModelContext.Consumer>
     </AppModelProvider>
     </>
     );

@@ -12,7 +12,7 @@
     "moduleResolution": "node",
     "stripInternal": true,
     "noEmit": false,
-    "types": ["@emotion/core"],
+    "types": ["@emotion/core", "jest"],
     "plugins": [{ "name": "typescript-tslint-plugin" }]
   },
   "include": ["**/*.ts", "**/*.vue"],
