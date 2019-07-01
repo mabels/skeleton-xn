@@ -13,7 +13,7 @@
     "lerna": "^3.15.0"
   },
   "resolutions": {
-    "typescript": "^3.5.2",
+    "typescript": "~3.4.2",
     "jest-emotion": "file:./jest-emotion-v10.0.11.tgz",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
@@ -23,11 +23,13 @@
     "@types/react-test-renderer": "^16.8.2",
     "@types/react": "^16.8.20",
     "@types/react-dom": "^16.8.4",
-    "@types/prop-types": "15.7.0"
+    "@types/prop-types": "15.7.0",
+    "@types/jest": "^24.0.15"
   },
   "workspaces": [    
     "agents",
     "vue",
+    "ajs",
     "test-utils",
     "components/*",
     "models",

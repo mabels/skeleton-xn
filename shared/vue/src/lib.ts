@@ -1,11 +1,20 @@
 // Import vue component
-import { Vue } from 'vue-property-decorator';
-import component from './App.vue';
-// const component = require('App.vue');
+import { Vue } from "vue-property-decorator";
+import App from "./App.vue";
+import { AppModel } from "@skeleton-xn/models";
 
-// Declare install function executed by Vue.use()
-export function startVueState(selector: string) {
-  Vue.component('vue-state', component);
-  (new component()).$mount(selector);
+export function startVueState(appModel: AppModel, selector: string): Vue {
+  const my = { appModel };
+  Object.freeze(my);
+  Vue.component('vue-app', App);
+  const component = new App({
+    data() {
+      return {
+        wrappedAppModel: my
+      };
+    },
+  });
+  component.$mount(selector);
+  return component;
 }
 // export default startVueState;

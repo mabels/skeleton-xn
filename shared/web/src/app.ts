@@ -1,7 +1,12 @@
 import { render } from 'react-dom';
 import { AppBase } from './app-base';
 import { startVueState } from '@skeleton-xn/vue';
+import { AppModelImpl } from '@skeleton-xn/models';
 
-render(AppBase(), document.getElementById('root'));
+// import { startAjsState } from '@skeleton-xn/ajs';
 
-startVueState('#vue-app');
+const appModel = new AppModelImpl();
+
+render(AppBase({ appModel }), document.getElementById('root'));
+
+// startAjsState('#ajs-app');

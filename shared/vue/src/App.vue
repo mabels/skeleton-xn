@@ -1,15 +1,12 @@
 <template>
-  <div id="app">
-    <VueState msg="VueState" v-bind:appState="state.get()"/>
-    <VueState msg="VueState" v-bind:appState="state.get()"/>
-  </div>
+  <VueState msg="VueState" v-bind:appState="appModel"/>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Prop } from 'vue-property-decorator';
 import VueState from './components/VueState.vue';
 import { AppModel } from '@skeleton-xn/models';
-import { reaction, IObservableValue } from 'mobx';
+import { reaction, IObservableValue, observable } from 'mobx';
 
 Vue.config.productionTip = false;
 
@@ -19,20 +16,24 @@ Vue.config.productionTip = false;
   },
 })
 export default class App extends Vue {
-  public state: IObservableValue<AppModel> = (window as any).observableAppModel;
+  private wrappedAppModel!: { appModel: AppModel };
+  // public state: IObservableValue<AppModel> = observable.box(undefined); // (globalThis.window as any).observableAppModel;
       // new AppModelImpl();
+
+  public get appModel() {
+    return this.wrappedAppModel.appModel;
+  }
+
   public created() {
-    reaction(() => this.state.get(), (state) => {
-      console.log('AppStarted', state.objectId);
-      state.start();
-      reaction(() => state.whatToSay.get(), v => {
-        console.log('xxx', v)
-      });
-    }, { fireImmediately: true });
+    // console.log('AppStarted', this); //.appState.objectId);
+    // this.appState.start();
+    // reaction(() => this.appState.whatToSay.get(), v => {
+    //     console.log('xxx', v)
+    // }, { fireImmediately: true });
 
   }
   public destroy() {
-    console.log('AppDestroy');
+    // console.log('AppDestroy');
     // this.state.stop();
   }
 }

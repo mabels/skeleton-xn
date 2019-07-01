@@ -21,6 +21,7 @@ import { MobxAngularModule } from 'mobx-angular';
 })
 export class AppModule implements DoBootstrap {
   constructor(injector: Injector) {
+    console.log('Start:AppModule');
     const appComponent = createCustomElement(AppComponent, {
       injector
     });

@@ -1,5 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { AppModel } from '../../../models/dist/app-model';
+import { AppModel } from '@skeleton-xn/models';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

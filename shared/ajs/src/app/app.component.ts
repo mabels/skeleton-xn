@@ -3,11 +3,10 @@ import { AppModel } from '../../../models';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit, OnDestroy {
-  private appModel: AppModel = globalThis.observableAppModel.get();
+  private appModel: AppModel = (globalThis as any).observableAppModel.get();
   // new AppModelImpl();
   // private appModel = new AppModelImpl();
   ngOnInit() {

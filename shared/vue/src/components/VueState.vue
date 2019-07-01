@@ -1,9 +1,9 @@
 <template>
   <div class="VueState">
-    <h1>{{ msg }}</h1>
+    <h1>{{ title }}</h1>
     <input type="text"
-           :value="appState.whatToSay.get()"
-           @input="onChangeWhatToSay"
+      :value="appState.whatToSay.get()"
+      @input="onChangeWhatToSay"
     />
     <ul>
       <li>InputValue: {{appState.whatToSay.get()}}</li>
@@ -23,19 +23,16 @@ import { AppModel } from '@skeleton-xn/models';
 @Observer
 @Component
 export default class VueState extends Vue {
-  @Prop() private msg!: string;
+  @Prop() private title!: string;
   @Prop() private appState!: AppModel;
   public created() {
-    console.log('State', this.appState.objectId);
+    console.log('State', this);
   }
   @action.bound
   public onChangeWhatToSay(e: any) {
     this.appState.whatToSay.set(e.target.value);
   }
 
-  public get valueWhatToSay() {
-    return this.appState.whatToSay.get();
-  }
 }
 </script>
 

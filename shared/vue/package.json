@@ -5,7 +5,7 @@
   "@skeleton-xn/main": "src/lib.ts",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "rollup --config build/rollup.config.js --format es --file dist/vue.esm.js",
+    "build": "echo ji",
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit"
@@ -15,6 +15,7 @@
     "mobx-vue": "^2.0.9",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
+    "vue-nonreactive": "^0.1.0",
     "vue-property-decorator": "^8.1.0"
   },
   "devDependencies": {
